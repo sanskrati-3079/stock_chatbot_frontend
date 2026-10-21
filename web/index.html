@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StockSense AI</title>
+  <meta name="description" content="Technical signals, short-term forecasts and pro-grade charts for stocks, indices and crypto.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="bg-orbs" aria-hidden="true"><span></span><span></span><span></span></div>
+
+  <!-- ----------------------------- Navbar ----------------------------- -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open sidebar">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <a class="brand" href="#/home">
+        <div class="brand-logo">📈</div>
+        <div>
+          <div class="brand-name">StockSense AI</div>
+          <div class="brand-sub">Signals · Forecasts · Chat</div>
+        </div>
+      </a>
+      <nav class="nav" id="nav" data-ink-host aria-label="Main">
+        <a href="#/home" data-route="home"><span class="nav-ic">🏠</span>Home</a>
+        <a href="#/analyze" data-route="analyze"><span class="nav-ic">📈</span>Analyze</a>
+        <a href="#/compare" data-route="compare"><span class="nav-ic">⚖️</span>Compare</a>
+        <a href="#/watchlist" data-route="watchlist"><span class="nav-ic">⭐</span>Watchlist</a>
+        <a href="#/chat" data-route="chat"><span class="nav-ic">💬</span>AI Chat</a>
+        <a href="#/learn" data-route="learn"><span class="nav-ic">📚</span>Learn</a>
+        <span class="ink"></span>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <!-- ----------------------------- Sidebar ----------------------------- -->
+    <aside class="sidebar" id="sidebar">
+      <div class="status" id="status"><span class="dot"></span><span class="status-text">Checking service…</span></div>
+
+      <div class="side-label">Quick search</div>
+      <form class="side-search" id="sbSearch" autocomplete="off">
+        <label class="input-icon">
+          <svg viewBox="0 0 24 24" width="16" height="16"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <input class="input" name="q" placeholder="Ticker or company…" aria-label="Search">
+        </label>
+        <button class="btn btn-primary btn-block" type="submit">Analyze</button>
+      </form>
+
+      <div class="side-label">History period</div>
+      <div class="seg" id="periodSeg" data-ink-host></div>
+
+      <div class="side-label">Popular</div>
+      <div class="chip-grid" id="popularGrid"></div>
+
+      <div id="sbWatch"></div>
+
+      <div class="side-note">⚠️ Educational tool only — signals come from technical indicators and are <b>not</b> financial advice.</div>
+    </aside>
+    <div class="scrim" id="scrim"></div>
+
+    <!-- ----------------------------- Page ----------------------------- -->
+    <main class="main">
+      <div class="view" id="view"></div>
+    </main>
+  </div>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/indicators.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/views/home.js"></script>
+  <script src="js/views/analyze.js"></script>
+  <script src="js/views/compare.js"></script>
+  <script src="js/views/watchlist.js"></script>
+  <script src="js/views/chat.js"></script>
+  <script src="js/views/learn.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
