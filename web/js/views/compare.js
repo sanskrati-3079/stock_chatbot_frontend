@@ -119,6 +119,7 @@
     }));
   }
 
+  App.views = App.views || {};
   App.views.compare = function (root, ctx) {
     root.innerHTML = `
       ${ui.section('Compare stocks', 'Rebase up to six tickers to 100 and compare performance, risk and signals.', 'Compare')}

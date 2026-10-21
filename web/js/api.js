@@ -79,7 +79,8 @@
     historyMany: (tickers, period = '1mo') => many(history, tickers, period),
 
     isOnline: () => cached('health', 30000, () =>
-      request('/health', { timeout: 3000 }).then(() => true, () => false)),
+      // Generous timeout: a serverless backend may need a few seconds to cold-start.
+      request('/health', { timeout: 12000 }).then(() => true, () => false)),
 
     async chat(message, period) {
       try {

@@ -42,8 +42,13 @@
     if (scroll) window.scrollTo({ top: 0, behavior: 'instant' });
     document.title = page === 'home' ? 'StockSense AI' : `${nav.querySelector('a.active')?.textContent.trim()} · StockSense AI`;
 
+    const render = App.views && App.views[page];
+    if (!render) {
+      view.innerHTML = ui.alert('error', 'This page failed to load. Please refresh.');
+      return;
+    }
     Promise.resolve()
-      .then(() => App.views[page](view, ctx))
+      .then(() => render(view, ctx))
       .catch((err) => {
         console.error(err);
         if (ctx.alive()) view.innerHTML = ui.alert('error', api.SERVICE_DOWN);

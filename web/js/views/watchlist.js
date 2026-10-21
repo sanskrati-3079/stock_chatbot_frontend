@@ -49,6 +49,7 @@
     ui.animate(body);
   }
 
+  App.views = App.views || {};
   App.views.watchlist = function (root, ctx) {
     root.innerHTML = `
       ${ui.section('Your watchlist', 'Track the stocks you care about. Saved in this browser.', 'Watchlist')}

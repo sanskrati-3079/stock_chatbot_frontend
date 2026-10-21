@@ -50,6 +50,7 @@
       `<button class="suggestion" style="--i:${i}" data-ask="${ui.esc(q)}">${ui.esc(q)}<small>${hint}</small></button>`).join('')}</div>`;
   }
 
+  App.views = App.views || {};
   App.views.chat = function (root, ctx) {
     if (!messages) load();
     root.innerHTML = `

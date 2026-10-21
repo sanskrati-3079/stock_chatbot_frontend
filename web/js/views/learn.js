@@ -39,6 +39,7 @@
     ['Overbought / oversold', 'Conditions where price has risen or fallen quickly and may be due for a reversal.'],
   ];
 
+  App.views = App.views || {};
   App.views.learn = function (root) {
     root.innerHTML = `
       ${ui.section('Learn the indicators', 'Understand exactly what drives every signal you see.', 'Learn')}

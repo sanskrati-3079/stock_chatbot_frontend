@@ -303,6 +303,7 @@
     activate(renderers[store.get('anTab')] ? store.get('anTab') : 'price');
   }
 
+  App.views = App.views || {};
   App.views.analyze = async function (root, ctx) {
     const ticker = store.get('ticker');
     root.innerHTML = `${searchBar()}<div id="anBody">${loading(ticker)}</div>`;
